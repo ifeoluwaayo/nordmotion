@@ -1,26 +1,24 @@
-'use client';
-import { useEffect } from 'react';
-import styles from './page.module.css'
-import Intro from '../components/Intro';
-import Description from '../components/Description';
-import Projects from '../components/Projects';
+"use client";
+import About from "@/components/About";
+import Cars from "@/components/Cars";
+import Hero from "@/components/Hero";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    const addMotion = async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+    };
 
-  useEffect( () => {
-    (
-      async () => {
-          const LocomotiveScroll = (await import('locomotive-scroll')).default
-          const locomotiveScroll = new LocomotiveScroll();
-      }
-    )()
-  }, [])
+    addMotion();
+  }, []);
 
   return (
-      <main className={styles.main}>
-        <Intro />
-        <Description />
-        <Projects />
-      </main>
-  )
+    <main className="bg-black">
+      <Hero />
+      <Cars />
+      <About />
+    </main>
+  );
 }

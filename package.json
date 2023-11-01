@@ -1,5 +1,5 @@
 {
-  "name": "smooth-scroll-v2",
+  "name": "nordmotion",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.27",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.6",
     "gsap": "^3.12.1",
@@ -16,5 +17,12 @@
     "next": "13.4.6",
     "react": "18.2.0",
     "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.0",
+    "postcss": "^8",
+    "tailwindcss": "^3"
   }
 }
