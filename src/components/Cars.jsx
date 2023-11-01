@@ -30,7 +30,7 @@ const Cars = () => {
     ScrollTrigger.create({
       trigger: imageContainer.current,
       start: "top-=100px",
-      end: document.body.offsetHeight - window.innerHeight - 500,
+      end: document.body.offsetHeight - window.innerHeight - 600,
       pin: true,
     });
   }, []);
@@ -63,8 +63,10 @@ const Cars = () => {
 
   return (
     <div className="flex relative flex-col text-gray-500 p-[10%]">
-      <div className="flex gap-[5%] h-[400px] justify-between">
-        <div ref={imageContainer} className="relative h-[400px] w-[55%]">
+      <div className="flex gap-[5%] h-[400px] justify-between flex-col-reverse md:flex-row">
+        <div
+          ref={imageContainer}
+          className="relative h-[400px] z-10 w-full md:w-[55%] mt-5 md:mt-0">
           <Image
             src={`/assets/${cars[selectedCar].src}.jpg`}
             alt={cars[selectedCar].name}
@@ -72,8 +74,11 @@ const Cars = () => {
             priority
             className="object-cover"
           />
+          <p className="text-lg absolute text-gray-100 font-medium bottom-2 right-2">
+            {cars[selectedCar].name}
+          </p>
         </div>
-        <div className="flex items-center justify-center flex-col gap-6 max-w-[45%]">
+        <div className="flex items-center justify-center flex-col gap-6 w-full md:max-w-[45%]">
           <h2 className="text-white font-medium text-3xl underline underline-offset-4">
             Our Vehicles
           </h2>
@@ -84,7 +89,7 @@ const Cars = () => {
           </p>
         </div>
       </div>
-      <div ref={carsContainer} className="mt-28 flex flex-col">
+      <div ref={carsContainer} className="md:mt-28 mt-12 flex flex-col">
         {cars.map((car, index) => {
           return (
             <Link

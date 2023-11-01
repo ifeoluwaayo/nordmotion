@@ -27,6 +27,9 @@ const Hero = () => {
           autoPlay
           muted
           loop
+          preload="auto"
+          playsInline
+          controls={false}
           className="w-full h-screen object-cover brightness-[.6]"
         />
       </div>
@@ -35,13 +38,13 @@ const Hero = () => {
         <h1
           data-scroll
           data-scroll-speed="0.7"
-          className="text-white text-6xl uppercase text-center font-black tracking-wider leading-tight">
+          className="text-white max-w-[80%] text-5xl md:text-6xl uppercase text-center font-black tracking-wider leading-tight">
           Nord Motion: <br /> The Future of African Automotive
         </h1>
         <p
           data-scroll
           data-scroll-speed="0.3"
-          className="text-white max-w-[60vw] text-lg font-medium text-center mt-5">
+          className="text-white max-w-[75vw] md:max-w-[60vw] text-lg font-medium text-center mt-5">
           Nord Automobiles is a Nigerian automotive manufacturer with
           headquarters in Lagos, Nigeria. Our establishment was born out of the
           need for a remarkable made-in-Nigeria automobile brand.
