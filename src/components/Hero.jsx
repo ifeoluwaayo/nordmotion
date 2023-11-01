@@ -50,12 +50,16 @@ const Hero = () => {
           need for a remarkable made-in-Nigeria automobile brand.
         </p>
         <div className="flex gap-5 mt-8">
-          <button className="group [transform:translateZ(0)] rounded-full px-5 py-3 overflow-hidden relative before:absolute before:bg-white bg-black before:top-1/2 before:left-1/2 before:h-8 before:w-8 before:-translate-y-1/2 before:-translate-x-1/2 before:rounded-full before:scale-[0] before:opacity-0 hover:before:scale-[6] hover:before:opacity-100 before:transition before:ease-in-out before:duration-500 border hover:scale-95 transition-all ease-in-out duration-200 border-black hover:border-white">
+          <button
+            id="left"
+            className="group [transform:translateZ(0)] rounded-full px-5 py-3 overflow-hidden relative before:absolute before:bg-white bg-black before:top-1/2 before:left-1/2 before:h-8 before:w-8 before:-translate-y-1/2 before:-translate-x-1/2 before:rounded-full before:scale-[0] before:opacity-0 hover:before:scale-[6] hover:before:opacity-100 before:transition before:ease-in-out before:duration-500 border hover:scale-95 transition-all ease-in-out duration-200 border-black hover:border-white">
             <span className="font-semibold text-lg hover:scale-95 transition-all ease-in-out duration-200 text-white relative z-0 group-hover:text-black">
-              Test Drive
+              Build Your Car
             </span>
           </button>
-          <button className="group [transform:translateZ(0)] rounded-full px-5 py-3 overflow-hidden relative before:absolute before:bg-white before:top-1/2 before:left-1/2 before:h-8 before:w-8 before:-translate-y-1/2 before:-translate-x-1/2 before:rounded-full before:scale-[0] before:opacity-0 hover:before:scale-[6] hover:before:opacity-100 before:transition before:ease-in-out before:duration-500 border hover:scale-95 transition-all ease-in-out duration-200 border-white">
+          <button
+            id="right"
+            className="group [transform:translateZ(0)] rounded-full px-5 py-3 overflow-hidden relative before:absolute before:bg-white before:top-1/2 before:left-1/2 before:h-8 before:w-8 before:-translate-y-1/2 before:-translate-x-1/2 before:rounded-full before:scale-[0] before:opacity-0 hover:before:scale-[6] hover:before:opacity-100 before:transition before:ease-in-out before:duration-500 border hover:scale-95 transition-all ease-in-out duration-200 border-white">
             <span className="font-semibold text-lg hover:scale-95 transition-all ease-in-out duration-200 text-white relative z-0 group-hover:text-black">
               Search Inventory
             </span>

@@ -3,3 +3,64 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-color: black;
+}
+
+:root {
+  --container-width: 600px; /* variable for the maximum width of page’s content */
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+figure.video {
+  margin: 0;
+}
+
+figure.video .video__caption {
+  overflow: hidden;
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  font-family: "Dela Gothic One", cursive;
+  color: #fff;
+}
+
+figure.video .video__caption span {
+  transform: translateY(100%);
+  display: inline-block;
+}
+
+.video-block__container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  height: calc(var(--vh) * 100);
+}
+
+.video-block figure.video {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.video-block video {
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-block_full-width {
+  max-width: calc(var(--vw) * 100);
+  margin-left: calc(50% - (var(--vw) * 50));
+  margin-right: calc(50% - (var(--vw) * 50));
+  width: auto;
+  overflow: hidden;
+}

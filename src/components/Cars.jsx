@@ -30,7 +30,8 @@ const Cars = () => {
     ScrollTrigger.create({
       trigger: imageContainer.current,
       start: "top-=100px",
-      end: document.body.offsetHeight - window.innerHeight - 600,
+      // end: document.body.offsetHeight - window.innerHeight - 800,
+      end: "bottom+=250px",
       pin: true,
     });
   }, []);
