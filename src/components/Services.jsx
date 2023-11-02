@@ -5,39 +5,12 @@ import { useRef, useLayoutEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Services = () => {
-  const background = useRef(null);
-  const services = useRef(null);
-
-  const setVwVh = () => {
-    let vw = document.documentElement.clientWidth / 100;
-    let vh = document.documentElement.clientHeight / 100;
-    document.documentElement.style.setProperty("--vw", `${vw}px`);
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  };
-
   const expandableVideoBlock = () => {
-    const maxWidth = parseInt(
-      getComputedStyle(document.documentElement).getPropertyValue(
-        "--container-width"
-      )
-    );
-    const gap = 24;
     const element = document.querySelector(".video-block");
     const container = element.querySelector(".video-block__container");
     const figure = element.querySelector("figure.video");
     const video = element.querySelector("video");
-    const caption = figure.querySelector("figcaption span");
-
-    // get values to animate clipPath property
-    const getClipPath = () => {
-      let insetX = (window.innerWidth - maxWidth - gap) / 2;
-      let insetY = (window.innerHeight - maxWidth - gap) / 2;
-
-      insetX = insetX > 0 ? insetX : gap;
-      insetY = insetY > 0 ? insetY : gap;
-
-      return `inset(${insetY}px ${insetX}px)`;
-    };
+    const caption = figure.querySelector("figcaption div");
 
     let isPlaying = false;
 
@@ -58,6 +31,7 @@ const Services = () => {
 
         gsap.to(caption, {
           y: "100%",
+          opacity: 1,
           duration: 0.5,
         });
       }
@@ -79,7 +53,7 @@ const Services = () => {
     gsap.fromTo(
       figure,
       {
-        clipPath: getClipPath,
+        clipPath: `inset(15%)`,
         y: "-50%",
       },
       {
@@ -103,7 +77,8 @@ const Services = () => {
       scrollTrigger: {
         trigger: container,
         start: "top top",
-        end: () => window.innerHeight * 4,
+        end: "+=1000px",
+        // end: "400vh",
         scrub: true,
         pin: container,
       },
@@ -113,10 +88,10 @@ const Services = () => {
     tl.fromTo(
       figure,
       {
-        clipPath: getClipPath,
+        clipPath: `inset(15%)`,
       },
       {
-        clipPath: `inset(0px 0px)`,
+        clipPath: `inset(0%)`,
         duration: 0.5,
         onUpdate: () => {
           videoPause();
@@ -149,43 +124,39 @@ const Services = () => {
     tl.fromTo(
       figure,
       {
-        clipPath: `inset(0px 0px)`,
+        clipPath: `inset(0%)`,
       },
       {
-        clipPath: getClipPath,
+        clipPath: `inset(15%)`,
         duration: 0.5,
       }
     );
   };
 
+  const setVwVh = () => {
+    let vw = document.documentElement.clientWidth / 100;
+    let vh = document.documentElement.clientHeight / 100;
+    document.documentElement.style.setProperty("--vw", `${vw}px`);
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  };
+
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // const timeline = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: "#services",
-    //     scrub: true,
-    //     start: "top-=300px",
-    //     end: "+=500px",
-    //   },
-    // });
-
-    // timeline.from(background.current, { clipPath: `inset(15%)` });
-
-    addEventListener("DOMContentLoaded", setVwVh());
-    addEventListener("DOMContentLoaded", expandableVideoBlock());
-    addEventListener("resize", setVwVh());
+    window.addEventListener("DOMContentLoaded", setVwVh());
+    window.addEventListener("DOMContentLoaded", expandableVideoBlock());
+    window.addEventListener("resize", setVwVh());
 
     return () => {
-      window.removeEventListener("DOMContentLoaded", setVwVh);
-      window.removeEventListener("DOMContentLoaded", expandableVideoBlock);
-      window.removeEventListener("resize", setVwVh);
+      window.removeEventListener("DOMContentLoaded", setVwVh());
+      window.removeEventListener("DOMContentLoaded", expandableVideoBlock());
+      window.removeEventListener("resize", setVwVh());
     };
   }, []);
 
   return (
-    <div>
-      <div className="container">
+    <div className="">
+      <div className="">
         <section className="video-block video-block_full-width">
           <div className="video-block__container">
             <figure className="video">
@@ -196,9 +167,7 @@ const Services = () => {
                 playsinline
                 src="/assets/bg.mp4"></video>
               <figcaption className="video__caption">
-                <span>
-                  A journey of a thousand miles begins with a single step
-                </span>
+                <div className="">Nord Automobile is the best in Nigeria</div>
               </figcaption>
             </figure>
           </div>
