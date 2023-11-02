@@ -53,8 +53,8 @@ const About = () => {
       scrollTrigger: {
         trigger: container.current,
         scrub: true,
-        start: `top-=300px`,
-        end: `+=${window.innerHeight / 2}`,
+        start: `top-=400px`,
+        end: `+=${window.innerHeight * 0.9}`,
       },
       opacity: 1,
       ease: "none",
