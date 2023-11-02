@@ -11,6 +11,9 @@ const Footer = () => {
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    const isMobile = window.innerWidth <= 768;
+    console.log(isMobile);
+
     gsap.to(footer.current, {
       scrollTrigger: {
         trigger: footer.current,
@@ -21,23 +24,21 @@ const Footer = () => {
         onLeaveBack: () => setDone(true),
       },
       backgroundColor: "#fff",
-      position: "sticky",
-      bottom: 0,
-      left: 0,
+      position: !isMobile && "sticky",
+      bottom: !isMobile && 0,
+      left: !isMobile && 0,
       color: "#000",
       duration: 1,
     });
   }, []);
 
-  useEffect(() => console.log(done), [done]);
-
   return (
     <footer
       ref={footer}
-      className={`w-full h-screen ${
+      className={`w-full min-h-screen ${
         done ? "bg-white" : "bg-black"
       } text-white`}>
-      <div className="w-full h-[85%] pt-[25vh] px-[6vw] place-items-start justify-items-center grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="w-full h-[85%] py-[10vh] md:pt-[25vh] px-[6vw] place-items-start md:justify-items-center justify-items-stretch grid grid-cols-2 md:grid-cols-4 gap-8">
         <div className="flex flex-col gap-2">
           <h1 className="font-semibold text-3xl mb-5">Headquarters</h1>
           <p>
@@ -93,7 +94,7 @@ const Footer = () => {
           <Link href="">Privacy Policy</Link>
         </div>
       </div>
-      <div className="border-t flex h-[15%] items-center w-full px-[10vw] border-gray-500">
+      <div className="border-t flex h-[15%] py-[6vh] items-center w-full px-[10vw] border-gray-500">
         <p className="text-lg font-medium">
           Copyright &copy; {new Date().getFullYear()}. All rights reserved. By{" "}
           <Link href="https://adeayomide.me" className="font-semibold">
