@@ -40,7 +40,9 @@ const Footer = () => {
       } text-white`}>
       <div className="w-full h-[85%] py-[10vh] md:pb-0 md:pt-[25vh] px-[6vw] place-items-start md:justify-items-center justify-items-stretch grid grid-cols-2 md:grid-cols-4 gap-8">
         <div className="flex flex-col gap-2">
-          <h1 className="font-semibold text-3xl mb-5">Headquarters</h1>
+          <h1 className="font-semibold text-xl md:text-3xl mb-5">
+            Headquarters
+          </h1>
           <p>
             Plot 14, Adebisi Ogunniyi Crescent, Lekki-Epe expressway, Ikate,
             Lekki, Lagos
@@ -66,7 +68,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col gap-2">
-          <h1 className="font-semibold text-3xl mb-5">Company</h1>
+          <h1 className="font-semibold text-xl md:text-3xl mb-5">Company</h1>
           <Link href="">Nord Automobiles</Link>
           <Link href="">Mission & Vision</Link>
           <Link href="">Objectives</Link>
@@ -75,7 +77,7 @@ const Footer = () => {
           <Link href="">Careers</Link>
         </div>
         <div className="flex flex-col gap-2">
-          <h1 className="font-semibold text-3xl mb-5">Vehicles</h1>
+          <h1 className="font-semibold text-xl md:text-3xl mb-5">Vehicles</h1>
           <Link href="">Nord Flit</Link>
           <Link href="">Nord Max</Link>
           <Link href="">Nord A3</Link>
@@ -85,7 +87,9 @@ const Footer = () => {
           <Link href="">Nord Tusk</Link>
         </div>
         <div className="flex flex-col gap-2">
-          <h1 className="font-semibold text-3xl mb-5">Quick Links</h1>
+          <h1 className="font-semibold text-xl md:text-3xl mb-5">
+            Quick Links
+          </h1>
           <Link href="">Build Your Vehicle</Link>
           <Link href="">Services</Link>
           <Link href="">FAQ</Link>
