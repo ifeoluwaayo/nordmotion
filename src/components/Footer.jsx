@@ -35,10 +35,10 @@ const Footer = () => {
   return (
     <footer
       ref={footer}
-      className={`w-full min-h-screen ${
+      className={`w-full min-h-screen md:h-screen ${
         done ? "bg-white" : "bg-black"
       } text-white`}>
-      <div className="w-full h-[85%] py-[10vh] md:pt-[25vh] px-[6vw] place-items-start md:justify-items-center justify-items-stretch grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="w-full h-[85%] py-[10vh] md:pb-0 md:pt-[25vh] px-[6vw] place-items-start md:justify-items-center justify-items-stretch grid grid-cols-2 md:grid-cols-4 gap-8">
         <div className="flex flex-col gap-2">
           <h1 className="font-semibold text-3xl mb-5">Headquarters</h1>
           <p>
@@ -94,7 +94,7 @@ const Footer = () => {
           <Link href="">Privacy Policy</Link>
         </div>
       </div>
-      <div className="border-t flex h-[15%] py-[6vh] items-center w-full px-[10vw] border-gray-500">
+      <div className="border-t flex md:h-[15%] md:py-0 py-[6vh] items-center w-full px-[10vw] border-gray-500">
         <p className="text-lg font-medium">
           Copyright &copy; {new Date().getFullYear()}. All rights reserved. By{" "}
           <Link href="https://adeayomide.me" className="font-semibold">
