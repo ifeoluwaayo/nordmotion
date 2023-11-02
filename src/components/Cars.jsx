@@ -124,6 +124,18 @@ const Cars = () => {
           );
         })}
       </div>
+      {cars.map((car, index) => {
+        return (
+          <Image
+            src={`/assets/${car.src}.jpg`}
+            alt={car.name}
+            fill
+            priority
+            key={index}
+            className="object-cover hidden"
+          />
+        );
+      })}
     </div>
   );
 };
