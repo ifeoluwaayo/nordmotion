@@ -1,9 +1,9 @@
 "use client";
-import About from "@/components/About";
-import Cars from "@/components/Cars";
-import Footer from "@/components/Footer.jsx";
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
+import About from "@/components/Home/About";
+import Cars from "@/components/Home/Cars";
+import Footer from "@/components/Home/Footer.jsx";
+import Hero from "@/components/Home/Hero";
+import Services from "@/components/Home/Services";
 import { useEffect } from "react";
 
 export default function Home() {

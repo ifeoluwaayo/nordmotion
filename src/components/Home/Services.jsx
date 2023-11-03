@@ -161,10 +161,12 @@ const Services = () => {
           <div className="video-block__container">
             <figure className="video">
               <video
-                autoplay
-                loop
+                autoPlay
                 muted
-                playsinline
+                loop
+                preload="auto"
+                playsInline
+                controls={false}
                 src="/assets/bg.mp4"></video>
               <figcaption className="video__caption">
                 <div className="">Nord Automobile is the best in Nigeria</div>
